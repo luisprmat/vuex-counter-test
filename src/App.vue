@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app" class="container">
+        <h1>Vuex</h1>
+        <counter/>
+
+        <p>El contador es: {{ count }} y el contador multiplicado por 3 es: {{ tripleCounter }}</p>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import store from './store'
+import { mapGetters } from 'vuex'
+import Counter from './components/Counter.vue'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+    name: 'app',
+    components: {
+        'counter': Counter
+    },
+    computed: {
+        ...mapGetters(['tripleCounter']),
+        count() {
+            return store.state.count
+        }
+    }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+    @import '~bootstrap/scss/bootstrap';
 </style>

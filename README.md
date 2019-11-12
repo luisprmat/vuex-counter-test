@@ -1,5 +1,7 @@
 # vuex-counter
 
+Mis primeros pasos con *Vuex*
+
 ## Project setup
 ```
 npm install
@@ -22,3 +24,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+# vuex-counter-test
+
+#_Luis Parrado_
